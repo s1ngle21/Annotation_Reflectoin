@@ -41,8 +41,8 @@ public class TestRunner {
             }
         }
 
-        testMethods.stream()
-                .sorted(Comparator.comparing(method1 -> method1.getAnnotation(Test.class).priority()));
+        testMethods
+                .sort(Comparator.comparing(method1 -> method1.getAnnotation(Test.class).priority()));
         for (Method method : testMethods) {
             try {
                 method.invoke(clazz.newInstance());

@@ -11,17 +11,17 @@ public class MethodTests {
         System.out.println("Running before suite");
     }
 
-    @Test(priority = 1)
+    @Test(priority = 2)
     public static void test1() {
         System.out.println("Running test1");
     }
 
-    @Test(priority = 2)
+    @Test(priority = 3)
     public static void test2() {
-        System.out.println("Running test3");
+        System.out.println("Running test2");
     }
 
-    @Test(priority = 3)
+    @Test(priority = 1)
     public static void test3() {
         System.out.println("Running test3");
     }
