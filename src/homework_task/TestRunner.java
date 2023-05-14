@@ -9,6 +9,7 @@ import java.lang.reflect.Method;
 import java.util.ArrayList;
 import java.util.Comparator;
 import java.util.List;
+import java.util.stream.Collectors;
 
 public class TestRunner {
 
@@ -41,8 +42,9 @@ public class TestRunner {
             }
         }
 
-        testMethods
-                .sort(Comparator.comparing(method1 -> method1.getAnnotation(Test.class).priority()));
+        testMethods = testMethods.stream()
+                .sorted(Comparator.comparing(method -> method.getAnnotation(Test.class).priority()))
+                .collect(Collectors.toList());
         for (Method method : testMethods) {
             try {
                 method.invoke(clazz.newInstance());
