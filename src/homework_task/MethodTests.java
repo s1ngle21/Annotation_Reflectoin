@@ -14,17 +14,17 @@ public class MethodTests {
         logger.info("Running before suite");
     }
 
-    @Test(priority = 2)
+    @Test
     public static void test1() {
         logger.info("Running test1");
     }
 
-    @Test(priority = 3)
+    @Test(priority = 1)
     public static void test2() {
         logger.info("Running test2");
     }
 
-    @Test(priority = 1)
+    @Test(priority = 2)
     public static void test3() {
         logger.info("Running test3");
     }
